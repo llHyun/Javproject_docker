@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class JavProgramingApplication {
 
 	public static void main(String[] args) {
-		// .env 파일 로드
-		Dotenv dotenv = Dotenv.configure().directory("/home/ec2-user/Javproject_docker").load();
+		// .env 파일 로드 (컨테이너 내 경로로 수정)
+		Dotenv dotenv = Dotenv.configure().directory("/app").load();
 
 		// .env에서 환경 변수 읽기
 		String dbUrl = dotenv.get("DB_URL");
@@ -24,4 +24,5 @@ public class JavProgramingApplication {
 		// Spring 애플리케이션 시작
 		SpringApplication.run(JavProgramingApplication.class, args);
 	}
+
 }
