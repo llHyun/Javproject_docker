@@ -9,7 +9,7 @@ public class JavProgramingApplication {
 
 	public static void main(String[] args) {
 		// .env 파일 로드
-		Dotenv dotenv = Dotenv.configure().directory("/root/Javproject_docker").load();
+		Dotenv dotenv = Dotenv.configure().directory("~/Javproject_docker").load();
 
 		// .env에서 환경 변수 읽기
 		String dbUrl = dotenv.get("DB_URL");
